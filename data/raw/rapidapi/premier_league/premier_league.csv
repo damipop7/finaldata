@@ -1,0 +1,21 @@
+league,rank,team_name,points,played,win,draw,lose,goals_diff,form,last_update
+Premier League,1,Liverpool,79,33,24,7,2,44,WWLWW,2025-04-23T00:00:00+00:00
+Premier League,2,Arsenal,66,33,18,12,3,34,WDDWW,2025-04-23T00:00:00+00:00
+Premier League,3,Manchester City,61,34,18,7,9,23,WWWDW,2025-04-23T00:00:00+00:00
+Premier League,4,Nottingham Forest,60,33,18,6,9,14,WLLWW,2025-04-23T00:00:00+00:00
+Premier League,5,Newcastle,59,33,18,5,10,18,LWWWW,2025-04-23T00:00:00+00:00
+Premier League,6,Chelsea,57,33,16,9,8,18,WDDWL,2025-04-23T00:00:00+00:00
+Premier League,7,Aston Villa,57,34,16,9,9,5,LWWWW,2025-04-23T00:00:00+00:00
+Premier League,8,Bournemouth,49,33,13,10,10,12,DWDLL,2025-04-23T00:00:00+00:00
+Premier League,9,Fulham,48,33,13,9,11,3,LLWLW,2025-04-23T00:00:00+00:00
+Premier League,10,Brighton,48,33,12,12,9,0,LDLLD,2025-04-23T00:00:00+00:00
+Premier League,11,Brentford,46,33,13,7,13,6,WDDLW,2025-04-23T00:00:00+00:00
+Premier League,12,Crystal Palace,44,33,11,11,11,-4,DLLWD,2025-04-23T00:00:00+00:00
+Premier League,13,Everton,38,33,8,14,11,-6,LWDLD,2025-04-23T00:00:00+00:00
+Premier League,14,Manchester United,38,33,10,8,15,-8,LLDLW,2025-04-23T00:00:00+00:00
+Premier League,15,Wolves,38,33,11,5,17,-13,WWWWW,2025-04-23T00:00:00+00:00
+Premier League,16,Tottenham,37,33,11,4,18,10,LLWLL,2025-04-23T00:00:00+00:00
+Premier League,17,West Ham,36,33,9,9,15,-18,DLDLD,2025-04-23T00:00:00+00:00
+Premier League,18,Ipswich,21,33,4,9,20,-38,LDLWL,2025-04-23T00:00:00+00:00
+Premier League,19,Leicester,18,33,4,6,23,-46,LDLLL,2025-04-23T00:00:00+00:00
+Premier League,20,Southampton,11,33,2,5,26,-54,DLLDL,2025-04-23T00:00:00+00:00

@@ -1,0 +1,24 @@
+[
+  {
+    "last_update": "2025-04-22T21:23:07.315535",
+    "status": "success",
+    "leagues_updated": [
+      "premier_league",
+      "la_liga",
+      "bundesliga",
+      "serie_a",
+      "ligue_1"
+    ]
+  },
+  {
+    "last_update": "2025-04-22T21:26:11.569517",
+    "status": "success",
+    "leagues_updated": [
+      "premier_league",
+      "la_liga",
+      "bundesliga",
+      "serie_a",
+      "ligue_1"
+    ]
+  }
+]

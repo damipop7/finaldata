@@ -1,0 +1,9 @@
+# Kaggle API credentials
+KAGGLE_USERNAME: "oluwadamilolapopoola"
+KAGGLE_KEY: "6011f470939bcacb516e699f96df730b"
+
+# API keys
+RAPIDAPI_KEY: "be763f3d58mshc4ea98ef1eadb35p12e52bjsnf6e77a916922"
+
+# Note: Consider moving sensitive credentials to environment variables
+# or using a .env file instead of storing them directly in config.yaml
