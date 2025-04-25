@@ -1,0 +1,86 @@
+Key Findings:
+
+Wingers have highest average market values:
+Right Wingers: €463,728
+Left Wingers: €438,916
+Goalkeepers have lowest average value: €129,302
+Most common positions:
+Centre-Back: 1,753 players
+Centre-Forward: 1,269 players
+Central Midfield: 1,202 players
+Specialized positions are rare:
+Second Striker: 42 players
+Left Midfield: 69 players
+Right Midfield: 77 players
+
+
+2. Market Value Distribution
+The market value analysis reveals:
+
+Most players are valued in lower ranges
+Few extremely high-valued players create a right-skewed distribution
+Median values around €100,000 for most positions
+Notable exceptions:
+Second Strikers (€162,500)
+Left Wingers (€125,000)
+Goalkeepers (€50,000)
+
+
+3. Age Impact
+The age analysis shows:
+
+Peak value age typically 23-27 years
+Rapid value increase up to peak
+Gradual decline after 30
+Goalkeepers maintain value longer
+Young players (18-21) show high potential values
+
+
+
+4. Club Analysis
+Club statistics reveal:
+
+Top clubs have significantly higher total squad values
+Concentration of high-value players in elite clubs
+League-specific value patterns
+Squad size variations
+
+
+
+5. Missing Data Patterns
+Notable gaps in:
+
+Agent information (2,915 missing)
+Contract expiration dates (927 missing)
+Transfer market values (9,595 missing)
+Player personal details (500-600 missing)
+
+
+
+Business Insights:
+1. Investment Strategy:
+Wingers command highest values
+Young attackers offer best ROI potential
+Goalkeepers are most cost-effective
+
+2. Squad Planning:
+Core positions (CB, CM, CF) have large talent pools
+Specialized positions are rare and potentially valuable
+Age profile crucial for value optimization
+
+3. Market Inefficiencies:
+Large variations in positional values
+Significant gaps in market data
+Potential for value in overlooked positions
+
+4. Risk Assessment:
+High percentage of missing transfer values indicates opaque market
+Contract information gaps suggest negotiation opportunities
+Personal data gaps may indicate scouting needs
+These insights can guide recruitment strategies, investment decisions, and squad development planning.
+
+
+presentation
+results\PlayerPerf_insight\top_valuable_players.csv
+results\PlayerPerf_insight\top_transfers.csv
+results\PlayerPerf_insight\nationality_distribution.png

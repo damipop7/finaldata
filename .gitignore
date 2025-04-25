@@ -2,3 +2,22 @@ venv/
 __pycache__/
 *.pyc
 .env
+
+# Ignore processed and raw data files that exceed 100MB
+data/processed/combined_players/
+data/raw/kaggle/player-scores/appearances.csv
+data/raw/kaggle/player-scores/game_events.csv
+data/raw/kaggle/player-scores/game_lineups.csv
+data/raw/kaggle/soccer/database.sqlite
+
+# Optionally ignore all CSV and SQLite files in raw and processed directories
+# data/raw/**/*.csv
+# data/raw/**/*.sqlite
+# data/processed/**/*.csv
+
+
+# Don't ignore configuration and core files
+!config/*.py
+!utils/*.py
+!data_pipeline/*.py
+!models/*.py

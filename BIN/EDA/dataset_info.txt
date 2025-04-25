@@ -1,0 +1,88 @@
+Dataset Analysis Run: 2025-04-23 02:18:05
+
+Total Records: 9917
+
+Dataset Shape:
+(9917, 38)
+
+Data Types:
+player_id                                             int64
+date                                                 object
+market_value_in_eur                                   int64
+player_club_domestic_competition_id                  object
+first_name                                           object
+last_name                                            object
+name                                                 object
+last_season                                           int64
+stats_current_club_id                                 int64
+player_code                                          object
+country_of_birth                                     object
+city_of_birth                                        object
+country_of_citizenship                               object
+date_of_birth                           datetime64[ns, UTC]
+sub_position                                         object
+foot                                                 object
+height_in_cm                                        float64
+contract_expiration_date                datetime64[ns, UTC]
+agent_name                                           object
+image_url                                            object
+url                                                  object
+current_club_domestic_competition_id                 object
+current_club_name                                    object
+stats_market_value_in_eur                             int64
+highest_market_value_in_eur                           int64
+transfer_date                                        object
+transfer_season                                      object
+from_club_id                                          int64
+to_club_id                                            int64
+from_club_name                                       object
+to_club_name                                         object
+transfers_market_value_in_eur                       float64
+player_name                                          object
+current_club_id_history                               int64
+position_history                                     object
+transfer_fee_history                                 object
+age                                                   Int64
+max_transfer_fee                                    float64
+dtype: object
+
+Missing Values:
+player_id                                  0
+date                                       0
+market_value_in_eur                        0
+player_club_domestic_competition_id        0
+first_name                               564
+last_name                                  0
+name                                       0
+last_season                                0
+stats_current_club_id                      0
+player_code                                0
+country_of_birth                         595
+city_of_birth                            594
+country_of_citizenship                     0
+date_of_birth                              1
+sub_position                               2
+foot                                     344
+height_in_cm                             347
+contract_expiration_date                 927
+agent_name                              2915
+image_url                                  0
+url                                        0
+current_club_domestic_competition_id       0
+current_club_name                          0
+stats_market_value_in_eur                  0
+highest_market_value_in_eur                0
+transfer_date                              0
+transfer_season                            0
+from_club_id                               0
+to_club_id                                 0
+from_club_name                             0
+to_club_name                               0
+transfers_market_value_in_eur           9595
+player_name                                0
+current_club_id_history                    0
+position_history                           0
+transfer_fee_history                     855
+age                                        1
+max_transfer_fee                         855
+dtype: int64

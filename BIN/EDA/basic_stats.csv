@@ -1,0 +1,16 @@
+,total_players,unique_clubs,avg_market_value,max_market_value,positions
+0,9917,274,284160.1290712917,25000000,"sub_position
+Centre-Back           1753
+Centre-Forward        1269
+Central Midfield      1202
+Goalkeeper            1160
+Right-Back             764
+Defensive Midfield     750
+Left Winger            747
+Left-Back              710
+Attacking Midfield     700
+Right Winger           672
+Right Midfield          77
+Left Midfield           69
+Second Striker          42
+Name: count, dtype: int64"

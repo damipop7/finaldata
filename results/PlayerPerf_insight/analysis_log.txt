@@ -1,0 +1,16 @@
+
+[2025-04-23 03:06:25] Starting analysis
+[2025-04-23 03:06:25] Generated dataset info
+[2025-04-23 03:06:25] Generated stats: basic_stats.csv
+[2025-04-23 03:06:25] Generated plot: market_value_dist.png
+[2025-04-23 03:06:25] Generated stats: top_valuable_players.csv
+[2025-04-23 03:06:26] Generated plot: position_market_value.png
+[2025-04-23 03:06:26] Generated stats: position_statistics.csv
+[2025-04-23 03:06:26] Generated plot: age_market_value.png
+[2025-04-23 03:06:26] Generated stats: age_value_correlation.csv
+[2025-04-23 03:06:26] Generated plot: top_clubs_value.png
+[2025-04-23 03:06:26] Generated stats: club_statistics.csv
+[2025-04-23 03:06:26] Generated plot: nationality_distribution.png
+[2025-04-23 03:06:27] Generated plot: correlation_matrix.png
+[2025-04-23 03:06:27] Generated stats: top_transfers.csv
+[2025-04-23 03:06:27] Analysis complete. Duration: 2.06 seconds
