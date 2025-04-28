@@ -147,11 +147,7 @@ def predict_single_match():
         
         # Apply probability adjustments
         from utils.probability_adjustments import adjust_match_probabilities
-        result = adjust_match_probabilities(
-            raw_result['home_win'],
-            raw_result['draw'],
-            raw_result['away_win']
-        )
+        result = adjust_match_probabilities(raw_result)  # Pass the entire dictionary instead of individual values
         
         print(f"\nPrediction for {home_team} vs {away_team}:")
         print(f"Home win probability: {result['home_win']:.2%}")

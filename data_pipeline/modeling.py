@@ -16,6 +16,11 @@ from utils.probability_adjustments import adjust_match_probabilities
 from config.model_config import PREDICTION_FACTORS
 from config.team_mapping import get_historical_name
 import sqlite3
+from config.model_config import (
+    RECENT_MATCHES_WINDOW,
+    WEIGHTS,
+    DEFAULT_PROBABILITIES
+)
 
 TEAM_NAME_MAPPING = {
     # Current to Historical mappings
@@ -250,37 +255,87 @@ class SoccerPredictor:
         }
 
     def _get_team_form(self, team_name: str) -> float:
-        """Get team form as a float value"""
-        # Placeholder implementation for team form
-        # Replace with actual logic to calculate team form
-        return 0.0
+        """Get team's current form based on recent matches"""
+        try:
+            # Convert team name to historical format
+            team_name = get_historical_name(team_name)
+            
+            # Query recent matches
+            query = """
+                SELECT 
+                    CASE 
+                        WHEN (home_team_api_id IN (SELECT team_api_id FROM Team WHERE team_long_name = ?)
+                             AND home_team_goal > away_team_goal)
+                        OR (away_team_api_id IN (SELECT team_api_id FROM Team WHERE team_long_name = ?)
+                             AND away_team_goal > home_team_goal) THEN 3
+                        WHEN home_team_goal = away_team_goal THEN 1
+                        ELSE 0 
+                    END as points,
+                    date
+                FROM Match
+                WHERE home_team_api_id IN (SELECT team_api_id FROM Team WHERE team_long_name = ?)
+                OR away_team_api_id IN (SELECT team_api_id FROM Team WHERE team_long_name = ?)
+                ORDER BY date DESC
+                LIMIT ?
+            """
+            
+            results = self.db.execute(query, (team_name, team_name, team_name, team_name, 
+                                            RECENT_MATCHES_WINDOW)).fetchall()
+            
+            if not results:
+                return 0.0
+                
+            # Calculate weighted form (more recent matches have higher weight)
+            total_weight = 0
+            weighted_points = 0
+            for i, match in enumerate(results):
+                weight = 1.0 / (i + 1)  # Decreasing weights for older matches
+                weighted_points += match['points'] * weight
+                total_weight += weight
+                
+            return weighted_points / (total_weight * 3)  # Normalize to 0-1 range
+            
+        except Exception as e:
+            print(f"Error calculating team form: {e}")
+            return 0.0
 
     def predict_match(self, home_team: str, away_team: str) -> dict:
-        """Predict match outcome probabilities"""
+        """Predict match outcome probabilities with weighted factors"""
         try:
-            # Get raw predictions from model
+            # Get raw historical predictions
             home_prob, draw_prob, away_prob = self._get_raw_predictions(home_team, away_team)
             
-            # Add form-based adjustments
+            # Get current form
             home_form = self._get_team_form(home_team)
             away_form = self._get_team_form(away_team)
             
-            # Adjust probabilities based on form
-            home_prob = home_prob * (1 + home_form * 0.2)  # Reduce form impact
-            away_prob = away_prob * (1 + away_form * 0.2)
-            draw_prob = 1 - (home_prob + away_prob)
+            # Calculate weighted probabilities
+            weighted_home = (
+                WEIGHTS['historical'] * home_prob +
+                WEIGHTS['current_form'] * home_form +
+                WEIGHTS['home_advantage'] * DEFAULT_PROBABILITIES['home_win'] +
+                WEIGHTS['recent_matches'] * home_form
+            )
+            
+            weighted_away = (
+                WEIGHTS['historical'] * away_prob +
+                WEIGHTS['current_form'] * away_form +
+                WEIGHTS['recent_matches'] * away_form
+            )
+            
+            weighted_draw = 1 - (weighted_home + weighted_away)
             
             # Normalize probabilities
-            total = home_prob + draw_prob + away_prob
+            total = weighted_home + weighted_draw + weighted_away
             return {
-                'home_win': home_prob / total,
-                'draw': draw_prob / total,
-                'away_win': away_prob / total
+                'home_win': weighted_home / total,
+                'draw': weighted_draw / total, 
+                'away_win': weighted_away / total
             }
+            
         except Exception as e:
             print(f"Error in prediction: {e}")
-            # Return more balanced default probabilities
-            return {'home_win': 0.45, 'draw': 0.25, 'away_win': 0.30}
+            return DEFAULT_PROBABILITIES
 
     def get_available_teams(self):
         """Get list of available teams from the Kaggle database"""
